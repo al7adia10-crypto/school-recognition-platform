@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة التكريم والتحفيز المدرسي</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family: Tahoma, Arial, sans-serif;
+  background:#f7fbfa;
+  color:#25333a;
+  line-height:1.7;
+}
+
+header{
+  background:linear-gradient(120deg,#dff8ed,#e9e0ff,#d9f7f4);
+  padding:25px 18px 35px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+header::before{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:rgba(255,255,255,.35);
+  top:-120px;
+  right:-70px;
+}
+
+.ministry{
+  font-size:13px;
+  color:#536a68;
+  margin-bottom:12px;
+}
+
+.school{
+  font-size:15px;
+  font-weight:bold;
+  color:#315b57;
+  margin-bottom:18px;
+}
+
+.badge{
+  display:inline-block;
+  padding:7px 18px;
+  border-radius:30px;
+  background:rgba(255,255,255,.7);
+  color:#5d4a87;
+  font-size:13px;
+  margin-bottom:12px;
+  box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+h1{
+  font-size:35px;
+  color:#315c58;
+  margin:5px 0;
+}
+
+.subtitle{
+  color:#6a6280;
+  font-size:16px;
+  margin-top:7px;
+}
+
+.owner{
+  margin:22px auto 0;
+  max-width:520px;
+  background:white;
+  padding:15px 20px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(59,94,90,.10);
+}
+
+.owner strong{
+  color:#765da8;
+  font-size:17px;
+}
+
+.digital{
+  font-size:13px;
+  color:#52756f;
+}
+
+/* البنر المتحرك */
+.ticker{
+  background:linear-gradient(90deg,#66cdb8,#9a83d7,#69cdbd);
+  color:white;
+  overflow:hidden;
+  white-space:nowrap;
+  padding:10px 0;
+  font-weight:bold;
+}
+
+.ticker span{
+  display:inline-block;
+  padding-right:100%;
+  animation:move 18s linear infinite;
+}
+
+@keyframes move{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(100%);}
+}
+
+.container{
+  width:min(1100px,92%);
+  margin:30px auto;
+}
+
+.welcome{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+.welcome h2{
+  color:#315c58;
+  font-size:25px;
+}
+
+.welcome p{
+  color:#75817f;
+}
+
+/* لوحة المؤشرات */
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin:25px 0 35px;
+}
+
+.stat{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(55,92,87,.08);
+  border:1px solid #edf4f2;
+  text-align:center;
+}
+
+.stat .icon{
+  font-size:28px;
+}
+
+.stat h3{
+  font-size:27px;
+  color:#5e9f93;
+}
+
+.stat p{
+  font-size:13px;
+  color:#788582;
+}
+
+/* الأقسام */
+.section-title{
+  text-align:center;
+  margin:20px 0;
+  color:#475c59;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:24px;
+  padding:28px 20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(48,86,80,.09);
+  transition:.25s;
+  border:1px solid #edf3f2;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card-icon{
+  width:75px;
+  height:75px;
+  margin:auto auto 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:22px;
+  font-size:34px;
+}
+
+.students .card-icon{
+  background:#def6ef;
+}
+
+.staff .card-icon{
+  background:#eee7fb;
+}
+
+.parents .card-icon{
+  background:#e4f7f5;
+}
+
+.card h3{
+  font-size:21px;
+  margin-bottom:7px;
+  color:#405955;
+}
+
+.card p{
+  font-size:14px;
+  color:#7a8583;
+  min-height:48px;
+}
+
+button{
+  margin-top:18px;
+  border:0;
+  border-radius:12px;
+  padding:10px 20px;
+  background:linear-gradient(90deg,#65c9b5,#9077ca);
+  color:white;
+  cursor:pointer;
+  font-size:14px;
+}
+
+/* الإنجاز */
+.progress-box{
+  margin-top:35px;
+  background:white;
+  border-radius:24px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(48,86,80,.08);
+}
+
+.progress-box h3{
+  color:#405955;
+  margin-bottom:18px;
+}
+
+.progress-row{
+  margin:17px 0;
+}
+
+.progress-label{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:6px;
+  font-size:14px;
+}
+
+.progress{
+  height:11px;
+  background:#edf2f1;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.progress div{
+  height:100%;
+  border-radius:10px;
+  background:linear-gradient(90deg,#63cbb5,#967ed2);
+}
+
+/* آخر التكريمات */
+.latest{
+  margin-top:35px;
+}
+
+.latest-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.recognition{
+  background:#fff;
+  border-radius:18px;
+  padding:18px;
+  border-right:5px solid #77cdbd;
+  box-shadow:0 7px 22px rgba(0,0,0,.05);
+}
+
+.recognition small{
+  color:#8b9694;
+}
+
+footer{
+  margin-top:45px;
+  background:#e7f5f1;
+  padding:30px 15px;
+  text-align:center;
+  color:#526c67;
+}
+
+footer .designer{
+  font-weight:bold;
+  color:#6e58a1;
+  margin-top:8px;
+}
+
+@media(max-width:800px){
+  h1{font-size:28px;}
+
+  .dashboard{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .latest-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="ministry">
+المملكة العربية السعودية • وزارة التعليم • الإدارة العامة للتعليم بمنطقة الحدود الشمالية
+</div>
+
+<div class="school">
+الابتدائية الحادية عشر برفحاء ومتوسطة حفصة بنت عمر
+</div>
+
+<div class="badge">
+مبادرة رقمية للتكريم والتحفيز
+</div>
+
+<h1>منصة التكريم والتحفيز المدرسي</h1>
+
+<div class="subtitle">
+نحتفي بالتميز • نعزز الدافعية • نصنع أثرًا إيجابيًا
+</div>
+
+<div class="owner">
+<strong>تصميم وتنفيذ المبادرة: فاطمة الشمري</strong>
+<div class="digital">
+مبادرة داعمة للتحول الرقمي وتطوير بيئة العمل المدرسي
+</div>
+</div>
+
+</header>
+
+<div class="ticker">
+<span>
+✨ لأن التميز يستحق أن يُرى ويُحتفى به • تكريم الطالبات المتميزات • تقدير المنسوبات • شكر أولياء الأمور الداعمين ✨
+</span>
+</div>
+
+<main class="container">
+
+<section class="welcome">
+<h2>لوحة التكريم والتحفيز</h2>
+<p>منصة إلكترونية ذكية لتوثيق وإدارة التكريم وتعزيز ثقافة التقدير داخل المجتمع المدرسي.</p>
+</section>
+
+<section class="dashboard">
+
+<div class="stat">
+<div class="icon">🏆</div>
+<h3>0</h3>
+<p>إجمالي حالات التكريم</p>
+</div>
+
+<div class="stat">
+<div class="icon">🎓</div>
+<h3>0</h3>
+<p>الطالبات المكرمات</p>
+</div>
+
+<div class="stat">
+<div class="icon">💜</div>
+<h3>0</h3>
+<p>المنسوبات المكرمات</p>
+</div>
+
+<div class="stat">
+<div class="icon">🤝</div>
+<h3>0</h3>
+<p>أولياء الأمور المكرمون</p>
+</div>
+
+</section>
+
+<h2 class="section-title">فئات التكريم</h2>
+
+<section class="cards">
+
+<div class="card students">
+<div class="card-icon">🎓</div>
+<h3>تكريم الطالبات</h3>
+<p>توثيق التميز الدراسي والسلوكي والمبادرات والإنجازات الطلابية.</p>
+<button onclick="showMessage('قسم تكريم الطالبات')">الدخول للقسم</button>
+</div>
+
+<div class="card staff">
+<div class="card-icon">💐</div>
+<h3>تكريم المنسوبات</h3>
+<p>تقدير الجهود المهنية والمبادرات والإبداع والتميز في الأداء.</p>
+<button onclick="showMessage('قسم تكريم المنسوبات')">الدخول للقسم</button>
+</div>
+
+<div class="card parents">
+<div class="card-icon">🤝</div>
+<h3>تكريم أولياء الأمور</h3>
+<p>تقدير الشراكة الفاعلة والدعم والمشاركة في البرامج المدرسية.</p>
+<button onclick="showMessage('قسم تكريم أولياء الأمور')">الدخول للقسم</button>
+</div>
+
+</section>
+
+<section class="progress-box">
+
+<h3>مؤشرات التكريم والتحفيز</h3>
+
+<div class="progress-row">
+<div class="progress-label">
+<span>تكريم الطالبات</span>
+<span>0%</span>
+</div>
+<div class="progress"><div style="width:0%"></div></div>
+</div>
+
+<div class="progress-row">
+<div class="progress-label">
+<span>تكريم المنسوبات</span>
+<span>0%</span>
+</div>
+<div class="progress"><div style="width:0%"></div></div>
+</div>
+
+<div class="progress-row">
+<div class="progress-label">
+<span>تكريم أولياء الأمور</span>
+<span>0%</span>
+</div>
+<div class="progress"><div style="width:0%"></div></div>
+</div>
+
+</section>
+
+<section class="latest">
+
+<h2 class="section-title">مساحات التميز</h2>
+
+<div class="latest-grid">
+
+<div class="recognition">
+<strong>⭐ إنجازات متميزة</strong>
+<br>
+<small>توثيق الإنجازات والتميز المستمر.</small>
+</div>
+
+<div class="recognition">
+<strong>🌿 أثر إيجابي</strong>
+<br>
+<small>تعزيز ثقافة التقدير والانتماء.</small>
+</div>
+
+<div class="recognition">
+<strong>🏅 تحفيز مستمر</strong>
+<br>
+<small>بيئة مدرسية تحتفي بالجهود والنجاحات.</small>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+<div>
+قائدة المدرسة: <strong>منار بنت مفلح الشمري</strong>
+</div>
+
+<div class="designer">
+تصميم وتنفيذ المبادرة: فاطمة الشمري
+</div>
+
+<div>
+نحو تحول رقمي أكثر كفاءة وتميزًا
+</div>
+</footer>
+
+<script>
+function showMessage(section){
+  alert("مرحبًا بك في " + section + " — سيتم تفعيل إدارة السجلات في المرحلة التالية.");
+}
+</script>
+
+</body>
+</html>
