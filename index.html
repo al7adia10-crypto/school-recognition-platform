@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة أثر | للتكريم والتحفيز</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+:root{
+  --emerald:#50336f;
+  --emerald2:#7452a0;
+  --petrol:#35234f;
+  --purple:#4a286e;
+  --purple2:#9473b5;
+  --gold:#c9a45b;
+  --cream:#faf8fd;
+  --white:#ffffff;
+  --text:#253532;
+  --muted:#72817e;
+  --border:#e7ebe8;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Tajawal',Tahoma,Arial,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.8;
+}
+
+/* HEADER */
+.hero{
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(201,168,93,.20),transparent 25%),
+    radial-gradient(circle at 90% 20%,rgba(137,110,177,.28),transparent 30%),
+    linear-gradient(135deg,#29133f,#4c2a70 48%,#241236);
+  padding:24px 18px 55px;
+}
+
+.hero:before,
+.hero:after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+}
+
+.hero:before{
+  width:330px;height:330px;
+  left:-150px;top:-150px;
+}
+
+.hero:after{
+  width:260px;height:260px;
+  right:-100px;bottom:-150px;
+}
+
+.official{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  position:relative;
+  z-index:2;
+}
+
+.logo-box{
+  min-width:120px;
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:18px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.15);
+  backdrop-filter:blur(10px);
+  padding:10px 16px;
+}
+
+/* عند رفع الشعار لاحقًا استبدلي المحتوى بصورة SVG */
+.logo-placeholder{
+  text-align:center;
+  font-size:12px;
+  color:#fff;
+  line-height:1.4;
+}
+
+.logo-placeholder strong{
+  display:block;
+  font-size:17px;
+}
+.logo-box{
+  min-width:90px;
+  min-height:60px;
+  padding:6px 10px;
+  border-radius:14px;
+}
+
+.logo-placeholder img{
+  width:100px;
+  height:auto;
+  display:block;
+  margin:auto;
+}
+.official-text{
+  flex:1;
+}
+
+.official-text small{
+  opacity:.75;
+}
+
+.school-name{
+  font-weight:700;
+  margin-top:4px;
+  font-size:15px;
+}
+
+.hero-content{
+  max-width:900px;
+  margin:55px auto 0;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.digital-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.10);
+  padding:7px 16px;
+  border-radius:50px;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:46px;
+  line-height:1.35;
+  margin-bottom:10px;
+}
+
+.hero h1 span{
+  color:#e6ca85;
+}
+
+.hero-sub{
+  opacity:.84;
+  font-size:17px;
+}
+
+.owner{
+  margin:28px auto 0;
+  max-width:570px;
+  padding:16px 20px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+}
+
+.owner-name{
+  font-size:19px;
+  font-weight:800;
+  color:#fff;
+}
+
+.owner-desc{
+  color:#dfd7ec;
+  font-size:13px;
+}
+
+/* MOVING BANNER */
+.marquee{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+  white-space:nowrap;
+  color:var(--emerald);
+  font-weight:700;
+  padding:11px 0;
+}
+
+.marquee-inner{
+  display:inline-block;
+  padding-right:100%;
+  animation:scrollBanner 19s linear infinite;
+}
+
+@keyframes scrollBanner{
+  from{transform:translateX(0)}
+  to{transform:translateX(100%)}
+}
+
+.container{
+  width:min(1150px,92%);
+  margin:35px auto;
+}
+
+.heading{
+  margin-bottom:20px;
+}
+
+.heading span{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:800;
+}
+
+.heading h2{
+  font-size:26px;
+  color:var(--petrol);
+}
+
+/* DASHBOARD */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.stat{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  padding:22px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  box-shadow:0 12px 35px rgba(18,62,73,.07);
+}
+
+.stat:after{
+  content:"";
+  width:80px;height:80px;
+  position:absolute;
+  left:-25px;top:-25px;
+  border-radius:50%;
+  background:rgba(13,81,72,.05);
+}
+
+.stat-icon{
+  width:45px;height:45px;
+  border-radius:14px;
+  background:#eef6f3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px;
+  margin-bottom:14px;
+}
+
+.stat:nth-child(3) .stat-icon{
+  background:#f3eff8;
+}
+
+.stat strong{
+  display:block;
+  font-size:30px;
+  color:var(--emerald);
+}
+
+.stat label{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* CATEGORIES */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:35px;
+}
+
+.category{
+  background:#fff;
+  padding:26px;
+  border-radius:24px;
+  border:1px solid var(--border);
+  box-shadow:0 12px 35px rgba(18,62,73,.06);
+  transition:.25s;
+}
+
+.category:hover{
+  transform:translateY(-5px);
+}
+
+.cat-icon{
+  width:62px;height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  border-radius:18px;
+  background:#e9f5f1;
+  margin-bottom:18px;
+}
+
+.category:nth-child(2) .cat-icon{
+  background:#f0eaf7;
+}
+
+.category:nth-child(3) .cat-icon{
+  background:#f8f2e4;
+}
+
+.category h3{
+  color:var(--petrol);
+  font-size:20px;
+}
+
+.category p{
+  color:var(--muted);
+  font-size:13px;
+  margin:6px 0 18px;
+}
+
+.btn{
+  border:0;
+  padding:11px 18px;
+  border-radius:12px;
+  background:linear-gradient(90deg,var(--emerald),var(--purple));
+  color:#fff;
+  font-family:inherit;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* PROGRESS */
+.progress-panel{
+  margin-top:35px;
+  background:linear-gradient(135deg,#fff,#f9fbfa);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:26px;
+  box-shadow:0 12px 35px rgba(18,62,73,.05);
+}
+
+.progress-row{
+  margin-top:17px;
+}
+
+.progress-info{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.track{
+  height:10px;
+  background:#e9eeec;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--emerald2),var(--purple2));
+  border-radius:20px;
+  transition:width .5s;
+}
+
+/* RECORD MANAGEMENT */
+.management{
+  margin-top:40px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:28px;
+  box-shadow:0 15px 40px rgba(18,62,73,.07);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:5px;
+  color:#465b57;
+}
+
+input,select,textarea{
+  width:100%;
+  border:1px solid #dce5e1;
+  border-radius:12px;
+  padding:12px;
+  font-family:inherit;
+  background:#fcfdfc;
+  outline:none;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:#5d9589;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.save-btn{
+  margin-top:18px;
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:13px;
+  background:linear-gradient(90deg,var(--emerald),var(--purple));
+  color:#fff;
+  font-family:inherit;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.notice{
+  display:none;
+  margin-top:14px;
+  background:#eaf7f2;
+  color:#246b5c;
+  padding:11px;
+  border-radius:11px;
+  text-align:center;
+  font-size:13px;
+}
+
+/* RECORDS */
+.records{
+  margin-top:35px;
+}
+
+.search{
+  margin-bottom:15px;
+}
+
+.record{
+  background:#fff;
+  border:1px solid var(--border);
+  border-right:5px solid var(--emerald2);
+  padding:16px;
+  border-radius:15px;
+  margin-bottom:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.record strong{
+  color:var(--petrol);
+}
+
+.record small{
+  color:var(--muted);
+  display:block;
+}
+
+.delete{
+  border:0;
+  background:#f7eaea;
+  color:#934646;
+  padding:7px 11px;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+.empty{
+  text-align:center;
+  color:#899591;
+  background:#fff;
+  border:1px dashed #d7dfdc;
+  padding:25px;
+  border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:50px;
+  background:#28183e;
+  color:#d8e7e3;
+  padding:35px 15px;
+  text-align:center;
+}
+
+footer strong{
+  color:#fff;
+}
+
+.footer-owner{
+  color:#e3c77e;
+  font-weight:800;
+  margin-top:8px;
+}
+
+@media(max-width:800px){
+  .official{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .categories,
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+}
+
+/* ATHAR IMPACT EXTENSION */
+.impact-intro{background:linear-gradient(120deg,#382052,#65428b);color:white;padding:28px;border-radius:24px;margin-top:38px;box-shadow:0 16px 40px #3c25502b}
+.impact-intro h2{font-size:27px;color:#f4d99c}.impact-intro p{opacity:.9;margin-top:5px}
+.impact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:20px 0}
+.impact-tile{background:white;border:1px solid #ece5f2;border-radius:20px;padding:20px;box-shadow:0 10px 28px #4c2a7010}
+.impact-tile span{font-size:13px;color:#786d82}.impact-tile strong{display:block;font-size:29px;color:#543576}
+.impact-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0}
+.impact-panel{background:white;border:1px solid #e9e1f0;border-radius:22px;padding:24px}
+.impact-panel h3{color:#42265e;margin-bottom:12px}
+.impact-list{margin-top:20px}.impact-item{border-right:4px solid #c9a45b;background:#fff;border-radius:13px;padding:15px;margin:10px 0;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.impact-item small{display:block;color:#756a7e}.impact-item button{border:0;background:#f9eded;color:#9b3748;border-radius:9px;padding:8px 12px;cursor:pointer}
+.impact-actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.impact-actions button{padding:11px 18px;border:0;border-radius:11px;background:#513271;color:#fff;font-family:inherit;cursor:pointer}.impact-actions button.secondary{background:#f3e9d4;color:#493252}
+.impact-note{font-size:12px;color:#7e7487;margin-top:10px}
+@media(max-width:800px){.impact-grid{grid-template-columns:repeat(2,1fr)}.impact-layout{grid-template-columns:1fr}.impact-intro h2{font-size:22px}}
+@media print{.management,.impact-form,.impact-actions,.delete,.impact-item button,.marquee{display:none!important}body{background:white}.hero{padding:20px}.impact-panel,.impact-tile{break-inside:avoid}}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="official">
+
+<div class="official-text">
+<small>المملكة العربية السعودية • وزارة التعليم</small>
+<div>الإدارة العامة للتعليم بمنطقة الحدود الشمالية</div>
+<div class="school-name">
+الابتدائية الحادية عشر برفحاء ومتوسطة حفصة بنت عمر
+</div>
+</div>
+
+<div class="logo-box">
+<div class="logo-placeholder">
+<img src="ministry-logo.png" alt="شعار وزارة التعليم" style="width:180px;max-width:100%;height:auto;display:block;margin:auto;">
+</div>
+</div>
+
+</div>
+
+<div class="hero-content">
+
+<div class="digital-tag">
+✦ مبادرة رقمية للتكريم والتحفيز
+</div>
+
+<h1>
+منصة <span>أثر</span>
+<br>
+للتكريم والتحفيز
+</h1>
+
+<div class="hero-sub">
+نُكرّم التميز • نُحفّز العطاء • نصنع أثرًا
+</div>
+
+<div class="owner">
+<div class="owner-name">
+تصميم وتنفيذ المبادرة: فاطمة الشمري
+</div>
+<div class="owner-desc">
+مهتمة بالتحول الرقمي وتطوير الحلول والمنصات الإلكترونية
+</div>
+</div>
+
+</div>
+
+</header>
+
+<div class="marquee">
+<div class="marquee-inner">
+✦ التميز يستحق أن يُحتفى به &nbsp;&nbsp; • &nbsp;&nbsp;
+نحتفي بطالباتنا المتميزات &nbsp;&nbsp; • &nbsp;&nbsp;
+نقدّر عطاء منسوباتنا &nbsp;&nbsp; • &nbsp;&nbsp;
+نثمّن شراكة أولياء الأمور &nbsp;&nbsp; • &nbsp;&nbsp;
+معًا نصنع أثرًا يدوم ✦
+</div>
+</div>
+
+<main class="container">
+
+<div class="heading">
+<span>لوحة القيادة</span>
+<h2>مؤشرات التكريم والتحفيز</h2>
+</div>
+
+<section class="stats">
+
+<div class="stat">
+<div class="stat-icon">🏆</div>
+<strong id="totalCount">0</strong>
+<label>إجمالي حالات التكريم</label>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🎓</div>
+<strong id="studentCount">0</strong>
+<label>الطالبات</label>
+</div>
+
+<div class="stat">
+<div class="stat-icon">✦</div>
+<strong id="staffCount">0</strong>
+<label>المنسوبات</label>
+</div>
+
+<div class="stat">
+<div class="stat-icon">🤝</div>
+<strong id="parentCount">0</strong>
+<label>أولياء الأمور</label>
+</div>
+
+</section>
+
+<section class="categories">
+
+<div class="category">
+<div class="cat-icon">🎓</div>
+<h3>تكريم الطالبات</h3>
+<p>توثيق التميز الدراسي والسلوكي والمبادرات والإنجازات.</p>
+<button class="btn" onclick="selectCategory('الطالبات')">إضافة تكريم</button>
+</div>
+
+<div class="category">
+<div class="cat-icon">🏅</div>
+<h3>تكريم المنسوبات</h3>
+<p>تقدير الأداء المتميز والمبادرات والإبداع والعطاء المهني.</p>
+<button class="btn" onclick="selectCategory('المنسوبات')">إضافة تكريم</button>
+</div>
+
+<div class="category">
+<div class="cat-icon">🤝</div>
+<h3>تكريم أولياء الأمور</h3>
+<p>تقدير الشراكة الفاعلة والمشاركة والدعم للمجتمع المدرسي.</p>
+<button class="btn" onclick="selectCategory('أولياء الأمور')">إضافة تكريم</button>
+</div>
+
+</section>
+
+<section class="progress-panel">
+
+<div class="heading">
+<span>قياس الأثر</span>
+<h2>توزيع التكريم حسب الفئات</h2>
+</div>
+
+<div class="progress-row">
+<div class="progress-info">
+<span>الطالبات</span>
+<span id="studentPercent">0%</span>
+</div>
+<div class="track"><div class="fill" id="studentBar" style="width:0"></div></div>
+</div>
+
+<div class="progress-row">
+<div class="progress-info">
+<span>المنسوبات</span>
+<span id="staffPercent">0%</span>
+</div>
+<div class="track"><div class="fill" id="staffBar" style="width:0"></div></div>
+</div>
+
+<div class="progress-row">
+<div class="progress-info">
+<span>أولياء الأمور</span>
+<span id="parentPercent">0%</span>
+</div>
+<div class="track"><div class="fill" id="parentBar" style="width:0"></div></div>
+</div>
+
+</section>
+
+<section class="management" id="addSection">
+
+<div class="heading">
+<span>إدارة التكريم</span>
+<h2>إضافة سجل تكريم جديد</h2>
+</div>
+
+<div class="form-grid">
+
+<div class="field">
+<label>فئة التكريم</label>
+<select id="category">
+<option value="">اختاري الفئة</option>
+<option>الطالبات</option>
+<option>المنسوبات</option>
+<option>أولياء الأمور</option>
+</select>
+</div>
+
+<div class="field">
+<label>اسم المكرَّم / المكرَّمة</label>
+<input id="personName" type="text" placeholder="اكتبي الاسم">
+</div>
+
+<div class="field">
+<label>مجال التكريم</label>
+<select id="achievement">
+<option value="">اختاري المجال</option>
+<option>التميز الدراسي</option>
+<option>التميز السلوكي</option>
+<option>المبادرات</option>
+<option>الإبداع والابتكار</option>
+<option>المشاركة المجتمعية</option>
+<option>الأداء المتميز</option>
+<option>الشراكة والدعم</option>
+<option>أخرى</option>
+</select>
+</div>
+
+<div class="field">
+<label>تاريخ التكريم</label>
+<input id="date" type="date">
+</div>
+
+<div class="field full">
+<label>سبب التكريم / وصف الإنجاز</label>
+<textarea id="reason" placeholder="اكتبي وصفًا مختصرًا للإنجاز أو سبب التكريم"></textarea>
+</div>
+
+</div>
+
+<button class="save-btn" onclick="saveRecognition()">
+حفظ سجل التكريم
+</button>
+
+<div class="notice" id="notice">
+✓ تم حفظ سجل التكريم بنجاح
+</div>
+
+</section>
+
+<section class="records">
+
+<div class="heading">
+<span>السجل الإلكتروني</span>
+<h2>سجل التكريم</h2>
+</div>
+
+<input
+class="search"
+id="search"
+type="text"
+placeholder="بحث بالاسم أو الفئة أو مجال التكريم..."
+oninput="renderRecords()">
+
+<div id="recordsList"></div>
+
+</section>
+
+
+<section id="impactSection" aria-label="قياس الأثر المدرسي">
+ <div class="impact-intro"><span>✦ التوسع النوعي في منصة أثر</span><h2>قياس الأثر المدرسي</h2><p>نقيس الأثر.. لنصنع التطوير | متابعة المبادرات والشراكات والبيئة المدرسية ومخرجات التكريم</p></div>
+ <div class="impact-grid">
+  <div class="impact-tile"><span>المبادرات المسجلة</span><strong id="initiativesCount">0</strong></div>
+  <div class="impact-tile"><span>الشراكات المجتمعية</span><strong id="partnershipsCount">0</strong></div>
+  <div class="impact-tile"><span>تحسينات البيئة المدرسية</span><strong id="environmentCount">0</strong></div>
+  <div class="impact-tile"><span>متوسط تحقق المستهدف</span><strong id="impactAverage">—</strong></div>
+ </div>
+ <div class="impact-layout">
+  <div class="impact-panel impact-form"><h3>✦ إضافة قياس أثر جديد</h3>
+   <div class="form-grid">
+    <div class="field"><label for="impactType">المجال</label><select id="impactType"><option value="مبادرة">المبادرات</option><option value="شراكة">الشراكات المجتمعية</option><option value="بيئة">البيئة المدرسية</option><option value="تكريم">أثر التكريم</option></select></div>
+    <div class="field"><label for="impactTitle">اسم النشاط أو المشروع</label><input id="impactTitle" placeholder="مثال: مبادرة تعزيز الانضباط"></div>
+    <div class="field"><label for="impactTarget">المستهدف (عدد)</label><input id="impactTarget" type="number" min="1" placeholder="100"></div>
+    <div class="field"><label for="impactActual">المتحقق (عدد)</label><input id="impactActual" type="number" min="0" placeholder="85"></div>
+    <div class="field"><label for="impactDate">تاريخ التنفيذ</label><input id="impactDate" type="date"></div>
+    <div class="field"><label for="impactEvidence">رابط الشاهد (اختياري)</label><input id="impactEvidence" type="url" placeholder="https://..."></div>
+    <div class="field full"><label for="impactDescription">وصف الأثر والتغير الملحوظ</label><textarea id="impactDescription" placeholder="ما الذي تغيّر بعد التنفيذ؟ وكيف قيس؟"></textarea></div>
+   </div>
+   <button class="save-btn" onclick="addImpact()">حفظ قياس الأثر</button>
+  </div>
+  <div class="impact-panel"><h3>📊 مؤشرات قياس الأثر</h3><div id="impactBars"></div><p class="impact-note">النسبة = المتحقق ÷ المستهدف × 100. المؤشرات تعتمد على السجلات المدخلة، ولا تُعد نتائج تقييم خارجي.</p><div class="impact-actions"><button onclick="window.print()">طباعة التقرير</button><button class="secondary" onclick="exportData()">تصدير البيانات CSV</button><button class="secondary" onclick="exportBackup()">نسخة احتياطية JSON</button></div><p class="impact-note">البيانات محفوظة محليًا على هذا المتصفح فقط. احفظي نسخة احتياطية بانتظام، خصوصًا قبل تغيير الجهاز أو إعادة نشر المشروع.</p></div>
+ </div>
+ <div class="impact-panel impact-list"><h3>سجل قياس الأثر</h3><div id="impactRecords"></div></div>
+</section>
+</main>
+
+<footer>
+
+<div>
+قائدة المدرسة:
+<strong>منار بنت مفلح الشمري</strong>
+</div>
+
+<div class="footer-owner">
+تصميم وتنفيذ المبادرة: فاطمة الشمري
+</div>
+
+<div>
+مهتمة بالتحول الرقمي وتطوير الحلول والمنصات الإلكترونية
+</div>
+
+<small>
+© منصة أثر للتكريم والتحفيز وقياس الأثر • 1448هـ
+</small>
+
+</footer>
+
+<script>
+
+let records =
+JSON.parse(localStorage.getItem("recognitionRecords")) || [];
+
+function selectCategory(cat){
+  document.getElementById("category").value = cat;
+  document.getElementById("addSection").scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+function saveRecognition(){
+
+  const category =
+  document.getElementById("category").value;
+
+  const name =
+  document.getElementById("personName").value.trim();
+
+  const achievement =
+  document.getElementById("achievement").value;
+
+  const date =
+  document.getElementById("date").value;
+
+  const reason =
+  document.getElementById("reason").value.trim();
+
+  if(!category || !name || !achievement){
+    alert("فضلاً أكمل فئة التكريم والاسم ومجال التكريم.");
+    return;
+  }
+
+  const item = {
+    id:Date.now(),
+    category,
+    name,
+    achievement,
+    date,
+    reason
+  };
+
+  records.unshift(item);
+
+  localStorage.setItem(
+    "recognitionRecords",
+    JSON.stringify(records)
+  );
+
+  document.getElementById("personName").value="";
+  document.getElementById("achievement").value="";
+  document.getElementById("date").value="";
+  document.getElementById("reason").value="";
+
+  const notice=document.getElementById("notice");
+  notice.style.display="block";
+
+  setTimeout(()=>{
+    notice.style.display="none";
+  },2500);
+
+  renderRecords();
+  updateDashboard();
+}
+
+function deleteRecord(id){
+
+  if(!confirm("هل تريدين حذف سجل التكريم؟")) return;
+
+  records = records.filter(item=>item.id!==id);
+
+  localStorage.setItem(
+    "recognitionRecords",
+    JSON.stringify(records)
+  );
+
+  renderRecords();
+  updateDashboard();
+}
+
+function renderRecords(){
+
+  const list =
+  document.getElementById("recordsList");
+
+  const q =
+  document.getElementById("search").value.toLowerCase();
+
+  const filtered = records.filter(r=>
+    r.name.toLowerCase().includes(q) ||
+    r.category.toLowerCase().includes(q) ||
+    r.achievement.toLowerCase().includes(q)
+  );
+
+  if(filtered.length===0){
+    list.innerHTML=
+    '<div class="empty">لا توجد سجلات تكريم حتى الآن.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(r=>`
+    <div class="record">
+      <div>
+        <strong>${escapeHTML(r.name)}</strong>
+        <small>
+          ${escapeHTML(r.category)} •
+          ${escapeHTML(r.achievement)}
+          ${r.date ? " • "+r.date : ""}
+        </small>
+        ${r.reason ?
+        `<small>${escapeHTML(r.reason)}</small>` : ""}
+      </div>
+
+      <button class="delete"
+      onclick="deleteRecord(${r.id})">
+      حذف
+      </button>
+    </div>
+  `).join("");
+}
+
+function updateDashboard(){
+
+  const total=records.length;
+
+  const students=
+  records.filter(r=>r.category==="الطالبات").length;
+
+  const staff=
+  records.filter(r=>r.category==="المنسوبات").length;
+
+  const parents=
+  records.filter(r=>r.category==="أولياء الأمور").length;
+
+  document.getElementById("totalCount").textContent=total;
+  document.getElementById("studentCount").textContent=students;
+  document.getElementById("staffCount").textContent=staff;
+  document.getElementById("parentCount").textContent=parents;
+
+  const studentP =
+  total ? Math.round(students/total*100) : 0;
+
+  const staffP =
+  total ? Math.round(staff/total*100) : 0;
+
+  const parentP =
+  total ? Math.round(parents/total*100) : 0;
+
+  document.getElementById("studentPercent").textContent=
+  studentP+"%";
+
+  document.getElementById("staffPercent").textContent=
+  staffP+"%";
+
+  document.getElementById("parentPercent").textContent=
+  parentP+"%";
+
+  document.getElementById("studentBar").style.width=
+  studentP+"%";
+
+  document.getElementById("staffBar").style.width=
+  staffP+"%";
+
+  document.getElementById("parentBar").style.width=
+  parentP+"%";
+}
+
+function escapeHTML(str){
+  return str.replace(/[&<>"']/g,function(m){
+    return({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    })[m];
+  });
+}
+
+renderRecords();
+updateDashboard();
+
+
+// Extension uses a separate storage key and does not alter existing recognition records.
+let impactRecords = [];
+try { const parsed=JSON.parse(localStorage.getItem('atharImpactRecords')||'[]');impactRecords=Array.isArray(parsed)?parsed:[]; }catch(e){impactRecords=[];}
+function addImpact(){
+ const val=id=>document.getElementById(id).value.trim();
+ const title=val('impactTitle'),target=Number(val('impactTarget')),actual=Number(val('impactActual'));
+ if(!title||!Number.isFinite(target)||target<=0||!Number.isFinite(actual)||actual<0||val('impactActual')===''){alert('أدخلي الاسم والمستهدف والمتحقق بأرقام صحيحة.');return;}
+ const evidence=val('impactEvidence');if(evidence&&!/^https?:\/\//i.test(evidence)){alert('رابط الشاهد يجب أن يبدأ بـ https:// أو http://');return;}
+ impactRecords.unshift({id:Date.now()+Math.random(),type:val('impactType'),title,target,actual,date:val('impactDate'),evidence,description:val('impactDescription')});
+ localStorage.setItem('atharImpactRecords',JSON.stringify(impactRecords));
+ ['impactTitle','impactTarget','impactActual','impactDate','impactEvidence','impactDescription'].forEach(id=>document.getElementById(id).value='');renderImpact();
+}
+function removeImpact(id){if(!confirm('حذف سجل قياس الأثر؟'))return;impactRecords=impactRecords.filter(r=>r.id!==id);localStorage.setItem('atharImpactRecords',JSON.stringify(impactRecords));renderImpact();}
+function renderImpact(){
+ const types=[['مبادرة','initiativesCount'],['شراكة','partnershipsCount'],['بيئة','environmentCount']];
+ types.forEach(([type,id])=>document.getElementById(id).textContent=impactRecords.filter(r=>r.type===type).length);
+ const avg=impactRecords.length?impactRecords.reduce((a,r)=>a+(r.actual/r.target*100),0)/impactRecords.length:null;
+ document.getElementById('impactAverage').textContent=avg===null?'—':avg.toFixed(1)+'%';
+ const categories=['مبادرة','شراكة','بيئة','تكريم'];
+ document.getElementById('impactBars').innerHTML=categories.map(type=>{const arr=impactRecords.filter(r=>r.type===type);const sumTarget=arr.reduce((a,r)=>a+r.target,0),sumActual=arr.reduce((a,r)=>a+r.actual,0);const pct=sumTarget?sumActual/sumTarget*100:0;return `<div class="progress-row"><div class="progress-info"><span>${escapeHTML(type)}</span><span>${arr.length?pct.toFixed(1)+'%':'لا توجد بيانات'}</span></div><div class="track"><div class="fill" style="width:${Math.min(100,pct)}%"></div></div></div>`}).join('');
+ document.getElementById('impactRecords').innerHTML=impactRecords.length?impactRecords.map(r=>`<div class="impact-item"><div><strong>${escapeHTML(r.title)}</strong><small>${escapeHTML(r.type)} • ${escapeHTML(r.date||'دون تاريخ')} • المتحقق ${r.actual} من ${r.target} (${(r.actual/r.target*100).toFixed(1)}%)</small>${r.description?`<small>${escapeHTML(r.description)}</small>`:''}${r.evidence?`<small><a href="${escapeHTML(r.evidence)}" target="_blank" rel="noopener noreferrer">عرض الشاهد</a></small>`:''}</div><button onclick="removeImpact(${r.id})">حذف</button></div>`).join(''):'<div class="empty">لا توجد قياسات أثر مسجلة بعد.</div>';
+}
+function downloadFile(content,name,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function exportData(){const rows=[['المجال','النشاط','المستهدف','المتحقق','التاريخ','وصف الأثر','رابط الشاهد'],...impactRecords.map(r=>[r.type,r.title,r.target,r.actual,r.date,r.description,r.evidence])];const csv='\uFEFF'+rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');downloadFile(csv,'athar-impact.csv','text/csv;charset=utf-8');}
+function exportBackup(){downloadFile(JSON.stringify({recognitionRecords:records,impactRecords},null,2),'athar-backup.json','application/json');}
+renderImpact();
+</script>
+
+</body>
+</html>
